@@ -4,7 +4,7 @@ ARG WX_VERSION=2.9.5
 ARG TRUECRYPT_REPO=https://github.com/j2gl/TrueCrypt
 ARG TRUECRYPT_VERSION=7.1a
 
-RUN apk add --no-cache libuuid git alpine-sdk nasm fuse-dev
+RUN apk add --no-cache libuuid git alpine-sdk nasm fuse-dev device-mapper ntfs-3g 
 
 # clone truecrypt
 RUN cd /tmp && git clone --branch %{TRUECRYPT_VERSION} ${TRUECRYPT_REPO}

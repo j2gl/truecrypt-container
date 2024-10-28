@@ -2,7 +2,7 @@
 
 ## Description 
 
-Container to mount a TrueCrypt 7.1afile. 
+Container to mount a TrueCrypt file using version 7.1a. 
 
 ## How to Build
 
@@ -13,7 +13,12 @@ docker build --platform=linux/x86_64 --tag=truecrypt:7.1a .
 
 ## Hot to run
 ```sh
-docker run -it --platform=linux/x86_64 --rm --name truecrypt truecrypt:7.1a /bin/sh
+docker run -it --platform=linux/x86_64 \
+  --rm --privileged \
+  --name truecrypt \
+  -v ./share:/share \
+  truecrypt:7.1a \
+  /bin/sh
 ```
 
 
